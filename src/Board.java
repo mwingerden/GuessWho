@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Board extends JPanel {
     private final ArrayList<JButton> characters = new ArrayList<>();
-    private static final Board instance = new Board();
-    private Board() {
-        Controller controller = new Controller();
+//    private static final Board instance = new Board();
+    public Board() {
+        Controller controller = new Controller(null, this);
         setLayout(new GridLayout(4, 6));
         characters.add(new JButton(new ImageIcon("./Images/Alex.png")));
         characters.add(new JButton(new ImageIcon("./Images/Alfred.png")));
@@ -39,9 +39,9 @@ public class Board extends JPanel {
         }
     }
 
-    public static Board getInstance() {
-        return instance;
-    }
+//    public static Board getInstance() {
+//        return instance;
+//    }
 
     public ArrayList<JButton> getCharacters() {
         return characters;

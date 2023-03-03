@@ -4,12 +4,12 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class ChatPanel extends JPanel implements Observer {
-    private static final ChatPanel instance = new ChatPanel();
     JTextField questionArea;
-    String question;
+    Repository repository;
 
-    private ChatPanel() {
-        Controller controller = new Controller();
+    public ChatPanel() {
+        repository = Repository.getInstance();
+        Controller controller = new Controller(this, null);
         setLayout(new BorderLayout());
 
         JPanel question = new JPanel();
@@ -39,13 +39,8 @@ public class ChatPanel extends JPanel implements Observer {
         add(responseArea, BorderLayout.CENTER);
     }
 
-    public static ChatPanel getInstance() {
-        return instance;
-    }
-
     public void setText() {
-        question = questionArea.getText();
-        System.out.println(question);
+        repository.setQuestion(questionArea.getText());
     }
 
     @Override
