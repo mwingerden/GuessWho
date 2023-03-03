@@ -1,32 +1,68 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
-public class Board extends JPanel {
+public class Board extends JPanel implements MouseListener {
+    ArrayList<JLabel> characters = new ArrayList<>();
+    ImageIcon out = new ImageIcon("./Images/out.png");
+    JLabel current;
     public Board() {
         setLayout(new GridLayout(4, 6));
-        add(new JLabel(new ImageIcon("./Characters/Alex.png")));
-        add(new JLabel(new ImageIcon("./Characters/Alfred.png")));
-        add(new JLabel(new ImageIcon("./Characters/Anita.png")));
-        add(new JLabel(new ImageIcon("./Characters/Anne.png")));
-        add(new JLabel(new ImageIcon("./Characters/Bernard.png")));
-        add(new JLabel(new ImageIcon("./Characters/Bill.png")));
-        add(new JLabel(new ImageIcon("./Characters/Charles.png")));
-        add(new JLabel(new ImageIcon("./Characters/Claire.png")));
-        add(new JLabel(new ImageIcon("./Characters/David.png")));
-        add(new JLabel(new ImageIcon("./Characters/Eric.png")));
-        add(new JLabel(new ImageIcon("./Characters/Franz.png")));
-        add(new JLabel(new ImageIcon("./Characters/George.png")));
-        add(new JLabel(new ImageIcon("./Characters/Herman.png")));
-        add(new JLabel(new ImageIcon("./Characters/Joe.png")));
-        add(new JLabel(new ImageIcon("./Characters/Maria.png")));
-        add(new JLabel(new ImageIcon("./Characters/Max.png")));
-        add(new JLabel(new ImageIcon("./Characters/Paul.png")));
-        add(new JLabel(new ImageIcon("./Characters/Peter.png")));
-        add(new JLabel(new ImageIcon("./Characters/Philip.png")));
-        add(new JLabel(new ImageIcon("./Characters/Richard.png")));
-        add(new JLabel(new ImageIcon("./Characters/Robert.png")));
-        add(new JLabel(new ImageIcon("./Characters/Sam.png")));
-        add(new JLabel(new ImageIcon("./Characters/Susan.png")));
-        add(new JLabel(new ImageIcon("./Characters/Tom.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Alex.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Alfred.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Anita.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Anne.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Bernard.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Bill.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Charles.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Claire.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/David.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Eric.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Franz.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/George.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Herman.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Joe.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Maria.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Max.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Paul.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Peter.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Philip.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Richard.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Robert.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Sam.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Susan.png")));
+        characters.add(new JLabel(new ImageIcon("./Images/Tom.png")));
+
+        for (JLabel character : characters) {
+            character.addMouseListener(this);
+            add(character);
+        }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }

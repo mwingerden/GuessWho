@@ -5,7 +5,8 @@ public class Repository extends Observable {
     private String question;
     private String response;
 
-    private Repository() {}
+    private Repository() {
+    }
 
     static public Repository getInstance() {
         return instance;
