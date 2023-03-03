@@ -6,7 +6,7 @@ public class Game extends JFrame {
         setTitle("Guess Who");
         setLayout(new BorderLayout());
         add(ChatPanel.getInstance(), BorderLayout.SOUTH);
-        add(new Board(), BorderLayout.CENTER);
+        add(Board.getInstance(), BorderLayout.CENTER);
 
         setSize(700, 700);
         setVisible(true);

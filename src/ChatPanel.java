@@ -1,16 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
-public class ChatPanel extends JPanel implements Observer, ActionListener {
+public class ChatPanel extends JPanel implements Observer {
     private static final ChatPanel instance = new ChatPanel();
     JTextField questionArea;
     String question;
 
     private ChatPanel() {
+        Controller controller = new Controller();
         setLayout(new BorderLayout());
 
         JPanel question = new JPanel();
@@ -25,7 +24,7 @@ public class ChatPanel extends JPanel implements Observer, ActionListener {
 
 
         JButton sendQuestionButton = new JButton("Submit Question");
-        sendQuestionButton.addActionListener(this);
+        sendQuestionButton.addActionListener(controller);
         question.add(sendQuestionButton, BorderLayout.NORTH);
 
 
@@ -44,19 +43,13 @@ public class ChatPanel extends JPanel implements Observer, ActionListener {
         return instance;
     }
 
-    public String getQuestion() {
-        return question;
+    public void setText() {
+        question = questionArea.getText();
+        System.out.println(question);
     }
 
     @Override
     public void update(Observable o, Object arg) {
 
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        question = questionArea.getText();
-        questionArea.setText("");
-//        System.out.println(question);
     }
 }
