@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Game extends JFrame {
     public static void main(String[] args) {
-        Game game = new Game();
+        new Game();
     }
 
     public Game() {
