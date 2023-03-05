@@ -5,10 +5,12 @@ import java.util.Observer;
 
 public class ChatPanel extends JPanel implements Observer {
     JTextField questionArea;
+    JTextField responseArea;
     Repository repository;
 
     public ChatPanel() {
         repository = Repository.getInstance();
+        repository.addObserver(this);
         Controller controller = new Controller(this, null);
         setLayout(new BorderLayout());
 
@@ -28,7 +30,7 @@ public class ChatPanel extends JPanel implements Observer {
         question.add(sendQuestionButton, BorderLayout.NORTH);
 
 
-        JTextField responseArea = new JTextField();
+        responseArea = new JTextField();
         responseArea.setEditable(false);
         setLayout(new BorderLayout());
         responseArea.setFont(new Font("Helvetica", Font.PLAIN, 50));
@@ -45,6 +47,6 @@ public class ChatPanel extends JPanel implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-
+        responseArea.setText((String) arg);
     }
 }
