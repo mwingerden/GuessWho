@@ -1,11 +1,11 @@
-import java.io.IOException;
 import java.util.Observable;
 
 public class Repository extends Observable {
     private static final Repository instance = new Repository();
     private String response = "";
 
-    private Repository() {}
+    private Repository() {
+    }
 
     static public Repository getInstance() {
         return instance;
