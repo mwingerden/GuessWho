@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 public class Board extends JPanel {
     private final ArrayList<JButton> characters = new ArrayList<>();
-//    private static final Board instance = new Board();
     public Board() {
         Controller controller = new Controller(null, this);
-        setLayout(new GridLayout(4, 6));
+        setLayout(new BorderLayout());
+        JPanel board = new JPanel();
+        board.setLayout(new GridLayout(4, 6));
         characters.add(new JButton(new ImageIcon("./Images/Alex.png")));
         characters.add(new JButton(new ImageIcon("./Images/Alfred.png")));
         characters.add(new JButton(new ImageIcon("./Images/Anita.png")));
@@ -35,15 +36,23 @@ public class Board extends JPanel {
 
         for (JButton character : characters) {
             character.addActionListener(controller);
-            add(character);
+            board.add(character);
         }
-    }
 
-//    public static Board getInstance() {
-//        return instance;
-//    }
+        JPanel characterBoard = new JPanel();
+        JLabel character = new JLabel();
+        character.setIcon(characters.get(getRandomNumber(0,23)).getIcon());
+        characterBoard.add(character);
+
+        add(characterBoard, BorderLayout.WEST);
+        add(board, BorderLayout.CENTER);
+    }
 
     public ArrayList<JButton> getCharacters() {
         return characters;
+    }
+
+    private int getRandomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
     }
 }
