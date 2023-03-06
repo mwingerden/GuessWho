@@ -42,7 +42,7 @@ public class ChatPanel extends JPanel implements Observer {
     }
 
     public void setText() {
-        repository.setQuestion(questionArea.getText());
+        repository.setResponse(questionArea.getText());
     }
 
     @Override

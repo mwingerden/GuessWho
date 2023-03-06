@@ -1,3 +1,5 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -5,35 +7,29 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Reader implements Runnable {
-    private static final String HOST = "127.0.0.1";
-    private static final int PORT = 12345;
-//    private volatile PrintWriter out;
-
-    public enum Kind {
-
-        CLIENT,
-        SERVER
-    }
+    String str = "hello";
+    Repository repository = Repository.getInstance();
     @Override
     public void run() {
         try {
-            Socket socket;
-            if (Repository.getInstance().getKind() == Kind.CLIENT) {
-                socket = new Socket(HOST, PORT);
-            } else {
-                ServerSocket ss = new ServerSocket(PORT);
-                socket = ss.accept();
+            Socket s = new Socket("localhost", 6666);
+            DataInputStream din=new DataInputStream(s.getInputStream());
+            DataOutputStream dout=new DataOutputStream(s.getOutputStream());
+
+            String str="",str2="";
+            while(!str.equals("stop")){
+                str = repository.getResponse();
+                dout.writeUTF(str);
+                dout.flush();
+                str2=din.readUTF();
+//                System.out.println("Server says: "+str2);
             }
-            Scanner in = new Scanner(socket.getInputStream());
-            out = new PrintWriter(socket.getOutputStream(), true);
-//            display("Connected");
-            while (true) {
-                System.out.println(in.nextLine());
-//                Repository.getInstance().setResponse(in.nextLine());
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace(System.err);
+
+            dout.close();
+            s.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
     }
 }
