@@ -13,11 +13,23 @@ public class Controller implements ActionListener {
     private final ImageIcon out = new ImageIcon("./Images/out.png");
     private final ChatPanel chatPanel;
     private final Board board;
+
+    /**
+     * The Controller constructor that gits the instance of the board and chat panel.
+     *
+     * @param chatPanel  the chat panel that was created.
+     * @param board      the board that was created.
+     */
     public Controller(ChatPanel chatPanel, Board board) {
         this.chatPanel = chatPanel;
         this.board = board;
     }
 
+    /**
+     * Overrides actionPerformed that updates the board and chat panel
+     *
+     * @param e The event that was pressed on the GUI.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equalsIgnoreCase("submit question")) {

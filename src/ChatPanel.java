@@ -16,6 +16,9 @@ public class ChatPanel extends JPanel implements Observer {
     JTextField responseArea;
     Repository repository;
 
+    /**
+     * The Chat Panel constructor that sets up a JPanel as described in the class description above.
+     */
     public ChatPanel(Repository repository) {
         this.repository = repository;
         repository.addObserver(this);
@@ -49,6 +52,9 @@ public class ChatPanel extends JPanel implements Observer {
         add(responseArea, BorderLayout.CENTER);
     }
 
+    /**
+     * Grabs the text in the question area(where the user typed) and sends it to repository to send to the other player.
+     */
     public void setText() {
         try {
             repository.append(questionArea.getText());
@@ -59,6 +65,12 @@ public class ChatPanel extends JPanel implements Observer {
         }
     }
 
+    /**
+     * Overrides the update method for Observer and updates the response area.
+     *
+     * @param o   The type of observable that is calling the observers
+     * @param arg The information that is being updated.
+     */
     @Override
     public void update(Observable o, Object arg) {
         responseArea.setText((String) arg);

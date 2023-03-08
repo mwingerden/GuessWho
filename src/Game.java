@@ -35,6 +35,8 @@ public class Game extends JFrame {
      * @param args lets the program know which port to set up correctly.
      */
     public static void main(String[] args) throws IOException {
+        // The first argument must be a 1 for the first execution of the program so that the at least on server client
+        // will be set up in tandem with the other server and client.
         if (Integer.parseInt(args[0]) == 1) {
             repository = new Repository(PORT1, PORT2);
         } else {

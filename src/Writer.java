@@ -17,15 +17,28 @@ public class Writer implements Runnable {
 
     private DataOutputStream outputStream;
 
+    /**
+     * The Writer constructor that adds info about the port.
+     *
+     * @param port  the port to load the client
+     */
     public Writer(int port) {
         this.port = port;
     }
 
+    /**
+     * Runs the client in its own thread
+     */
     public void start() {
         Thread thread = new Thread(this);
         thread.start();
     }
 
+    /**
+     * Sends the player response to the server.
+     *
+     * @param text  the text to write to the server
+     */
     synchronized public void write(String text) throws IOException {
         if (outputStream == null) {
             System.out.println("Output stream has not been created");
@@ -34,6 +47,9 @@ public class Writer implements Runnable {
         }
     }
 
+    /**
+     * Overrides run for the thread to receive any information from the server.
+     */
     @Override
     public void run() {
         while (true) {

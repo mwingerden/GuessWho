@@ -11,6 +11,10 @@ import java.util.ArrayList;
 
 public class Board extends JPanel {
     private final ArrayList<JButton> characters = new ArrayList<>();
+
+    /**
+     * The Board constructor which sets up just like what is said in the class description above.
+     */
     public Board() {
         Controller controller = new Controller(null, this);
         setLayout(new BorderLayout());
@@ -55,10 +59,18 @@ public class Board extends JPanel {
         add(board, BorderLayout.CENTER);
     }
 
+    /**
+     * Returns the character list
+     *
+     * @return ArrayList</JButton>  The list to be returned that holds the characters.
+     */
     public ArrayList<JButton> getCharacters() {
         return characters;
     }
 
+    /**
+     * Returns a random number between 23 and 0. Used to give player what character they have.
+     */
     private int getRandomNumber() {
         return (int) ((Math.random() * (23)) + 0);
     }
