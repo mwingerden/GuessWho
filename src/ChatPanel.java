@@ -1,3 +1,10 @@
+/**
+ * Chat Panel class creates a Jlabel with two text areas(one editable and other not editable) and a submit button
+ * that send the phrase of the player to the other player.
+ *
+ * @author  Matthew Wingerden
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;

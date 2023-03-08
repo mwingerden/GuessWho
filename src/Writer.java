@@ -1,3 +1,9 @@
+/**
+ * The Writer class sends the response from the player to the server for it to be sent to the other player.
+ *
+ * @author  Matthew Wingerden
+ */
+
 import java.io.*;
 import java.net.Socket;
 

@@ -1,3 +1,9 @@
+/**
+ * The Repository class takes the response from either player and sends it to the other.
+ *
+ * @author  Matthew Wingerden
+ */
+
 import java.io.IOException;
 import java.util.Observable;
 

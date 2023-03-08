@@ -1,3 +1,9 @@
+/**
+ * The reader class acts like a server receiving the message from the client and echoing it back.
+ *
+ * @author  Matthew Wingerden
+ */
+
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.ServerSocket;

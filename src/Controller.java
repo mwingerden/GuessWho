@@ -1,3 +1,10 @@
+/**
+ * The Controller class implements Action Listener that controls the decision to remove characters and activate
+ * the submit button.
+ *
+ * @author  Matthew Wingerden
+ */
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

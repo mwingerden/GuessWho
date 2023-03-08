@@ -1,3 +1,10 @@
+/**
+ * The Board class creates a JLabel with a 4x6 grid with all the faces from the game of Guess Who. Also adds a random
+ * character to the west side of the panel for the player to see which character they have.
+ *
+ * @author  Matthew Wingerden
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;

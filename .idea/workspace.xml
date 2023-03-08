@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7064239d-08b0-41a2-8298-b8c0d2d46f80" name="Changes" comment="Finished Project">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChatPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChatPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Writer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MTqRocDtbBrDzsGZS8jbPWV5Ud" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.GameServer">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="GuessWho" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameClient" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Game" />
+      <module name="GuessWho" />
+      <option name="PROGRAM_PARAMETERS" value="0" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameServer" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Game" />
+      <module name="GuessWho" />
+      <option name="PROGRAM_PARAMETERS" value="1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="GuessWho" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.GameClient" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.GameServer" />
+      <item itemvalue="Application.Server" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GameServer" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7064239d-08b0-41a2-8298-b8c0d2d46f80" name="Changes" comment="" />
+      <created>1677801915082</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677801915082</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit.">
+      <created>1677802106673</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677802106673</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial Commit.">
+      <created>1677802146912</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677802146912</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Reader, Writer, and implemented Repository">
+      <created>1677804225656</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677804225656</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Started the controller.">
+      <created>1677808247181</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677808247181</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added out.png">
+      <created>1677808298910</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677808298910</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Finished Controller.java">
+      <created>1677811197750</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677811197750</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixed some issues">
+      <created>1677881446546</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677881446546</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed some issues">
+      <created>1677989322012</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677989322012</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added client server implementation">
+      <created>1678073210442</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678073210442</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Game decides the player character.">
+      <created>1678073670108</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678073670108</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Reformatted code.">
+      <created>1678145011983</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678145011983</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Finished Project">
+      <created>1678245990325</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1678245990325</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit." />
+    <MESSAGE value="Added Reader, Writer, and implemented Repository" />
+    <MESSAGE value="Started the controller." />
+    <MESSAGE value="added out.png" />
+    <MESSAGE value="Finished Controller.java" />
+    <MESSAGE value="Fixed some issues" />
+    <MESSAGE value="Added client server implementation" />
+    <MESSAGE value="Game decides the player character." />
+    <MESSAGE value="Reformatted code." />
+    <MESSAGE value="Finished Project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Project" />
+  </component>
+</project>
