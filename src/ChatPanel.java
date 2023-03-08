@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -8,8 +9,8 @@ public class ChatPanel extends JPanel implements Observer {
     JTextField responseArea;
     Repository repository;
 
-    public ChatPanel() {
-        repository = Repository.getInstance();
+    public ChatPanel(Repository repository) {
+        this.repository = repository;
         repository.addObserver(this);
         Controller controller = new Controller(this, null);
         setLayout(new BorderLayout());
@@ -42,7 +43,13 @@ public class ChatPanel extends JPanel implements Observer {
     }
 
     public void setText() {
-        repository.setResponse(questionArea.getText());
+        try {
+            repository.append(questionArea.getText());
+            repository.send(questionArea.getText());
+            questionArea.setText("");
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     @Override

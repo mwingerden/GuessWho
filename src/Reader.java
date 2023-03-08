@@ -1,33 +1,72 @@
 import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Reader implements Runnable {
-    String str = "hello";
-    Repository repository = Repository.getInstance();
+
+    private final Repository repository;
+
+    private final int port;
+
+    private ServerSocket serverSocket;
+
+    private Socket acceptSocket;
+
+    private DataInputStream inputStream;
+
+    public Reader(Repository repository, int port) {
+        this.repository = repository;
+        this.port = port;
+    }
+
+    public void start() throws IOException {
+        serverSocket = new ServerSocket(port);
+        Thread thread = new Thread(this);
+        thread.start();
+    }
 
     @Override
     public void run() {
         try {
-            Socket s = new Socket("localhost", 6666);
-            DataInputStream din = new DataInputStream(s.getInputStream());
-            DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+            acceptSocket = serverSocket.accept();
+            inputStream = new DataInputStream(acceptSocket.getInputStream());
+            while (true) {
+                String data = inputStream.readUTF();
+                if (data.equals("quit")) {
+                    break;
+                }
+                repository.append(data);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+            inputStream = null;
 
-            String str = "", str2 = "";
-            while (!str.equals("stop")) {
-                str = repository.getResponse();
-                dout.writeUTF(str);
-                dout.flush();
-                str2 = din.readUTF();
-//                System.out.println("Server says: "+str2);
+            if (acceptSocket != null) {
+                try {
+                    acceptSocket.close();
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+                acceptSocket = null;
             }
 
-            dout.close();
-            s.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            if (serverSocket != null) {
+                try {
+                    serverSocket.close();
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
+                }
+                serverSocket = null;
+            }
         }
-
     }
 }

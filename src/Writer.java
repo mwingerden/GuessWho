@@ -1,38 +1,56 @@
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.ServerSocket;
+import java.io.*;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Writer implements Runnable {
-    List<DataOutputStream> dataOutputStreams = new ArrayList<>();
-    String str = "";
-    Repository repository = Repository.getInstance();
+
+    private static final int DELAY_IN_MILLIS = 5000;
+
+    private final int port;
+
+    private Socket clientSocket;
+
+    private DataOutputStream outputStream;
+
+    public Writer(int port) {
+        this.port = port;
+    }
+
+    public void start() {
+        Thread thread = new Thread(this);
+        thread.start();
+    }
+
+    synchronized public void write(String text) throws IOException {
+        if (outputStream == null) {
+            System.out.println("Output stream has not been created");
+        } else {
+            outputStream.writeUTF(text);
+        }
+    }
 
     @Override
     public void run() {
-        try {
-            ServerSocket ss = new ServerSocket(6666);
-            while (true) {
-                Socket s = ss.accept();
-                DataInputStream din = new DataInputStream(s.getInputStream());
-                DataOutputStream dout = new DataOutputStream(s.getOutputStream());
-
-                String str = "", str2 = "";
-                while (!str.equals("stop")) {
-                    str = din.readUTF();
-                    repository.setResponse(str);
-//                    System.out.println("client says: "+str);
-                    str2 = repository.getResponse();
-                    dout.writeUTF(str2);
-                    dout.flush();
-                }
+        while (true) {
+            try {
+                clientSocket = new Socket("localhost", port);
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
             }
-//            ss.close();
+            if (clientSocket == null) {
+                try {
+                    Thread.sleep(DELAY_IN_MILLIS);
+                } catch (InterruptedException e) {
+                    System.out.println(e.getMessage());
+                }
+            } else {
+                break;
+            }
+        }
+
+        try {
+            outputStream = new DataOutputStream(clientSocket.getOutputStream());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
     }
 }

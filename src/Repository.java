@@ -1,23 +1,24 @@
+import java.io.IOException;
 import java.util.Observable;
 
 public class Repository extends Observable {
-    private static final Repository instance = new Repository();
-    private String response = "";
 
-    private Repository() {
+    private final Writer writer;
+
+    public Repository(int readerPort, int writerPort) throws IOException {
+        Reader reader = new Reader(this, readerPort);
+        reader.start();
+
+        writer = new Writer(writerPort);
+        writer.start();
     }
 
-    static public Repository getInstance() {
-        return instance;
-    }
-
-    public String getResponse() {
-        return response;
-    }
-
-    public void setResponse(String response) {
-        this.response = response;
+    public void append(String text) throws IOException {
         setChanged();
-        notifyObservers(this.response);
+        notifyObservers(text);
+    }
+
+    public void send(String text) throws IOException {
+        writer.write(text);
     }
 }

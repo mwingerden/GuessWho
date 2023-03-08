@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Board extends JPanel {
     private final ArrayList<JButton> characters = new ArrayList<>();
-
     public Board() {
         Controller controller = new Controller(null, this);
         setLayout(new BorderLayout());
@@ -42,7 +41,7 @@ public class Board extends JPanel {
 
         JPanel characterBoard = new JPanel();
         JLabel character = new JLabel();
-        character.setIcon(characters.get(getRandomNumber(0, 23)).getIcon());
+        character.setIcon(characters.get(getRandomNumber()).getIcon());
         characterBoard.add(character);
 
         add(characterBoard, BorderLayout.WEST);
@@ -53,7 +52,7 @@ public class Board extends JPanel {
         return characters;
     }
 
-    private int getRandomNumber(int min, int max) {
-        return (int) ((Math.random() * (max - min)) + min);
+    private int getRandomNumber() {
+        return (int) ((Math.random() * (23)) + 0);
     }
 }
