@@ -1,6 +1,7 @@
 /**
- * The game class has the setup for the view of the game. Also has a main method that when two programs are run can
- * set up two repositories given each their own server and client.
+ * The game class has the setup for the view of the game. This program has to be run twice in order for the two
+ * games to talk to each other. The first program must have a 1 as an argument in order to set up the first board
+ * correctly. Then the second execution can take any or none argument.
  *
  * @author  Matthew Wingerden
  */
